@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Dynamic Full-Screen Background Image with Tenor GIF Embed</title>
+    <title>Date with me</title>
     <style>
         * {
             margin: 0;
@@ -284,16 +284,16 @@
             return radioGroup;
         }
 
-        function showSummary(dateType) {
-            proposalBox.style.display = 'none'; // Hide the proposal box
-            summaryBox.style.display = 'block'; // Show the summary box
+       function showSummary(dateType) {
+    const selectedPlace = document.querySelector('input[name="place"]:checked');
+    const otherPlace = document.querySelector('.radio-group .input-field').value;
+    const place = selectedPlace ? selectedPlace.value : otherPlace;
 
-            summaryText.textContent = `Congrats Divya! Your ${dateType} has been fixed with Digvijay Maurya at ${place} `;
-            const selectedPlace = document.querySelector('input[name="place"]:checked');
-            const otherPlace = document.querySelector('.radio-group .input-field').value;
-            const place = selectedPlace ? selectedPlace.value : otherPlace;
-            summaryText.textContent += place === 'Other place' ? otherPlace : place;
-        }
+    proposalBox.style.display = 'none'; // Hide the proposal box
+    summaryBox.style.display = 'block'; // Show the summary box
+
+    summaryText.textContent = `Congrats Divya! Your ${dateType} date has been fixed with Digvijay Maurya at ${place}`;
+}
     </script>
 </body>
 </html>
